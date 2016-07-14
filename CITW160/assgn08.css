@@ -1,0 +1,26 @@
+#news{
+  float:left;
+  width: 20%;
+  background-color: #8F8;
+}
+#main{
+  float:left;
+  width: 60%;
+  background-color: #88F;
+}
+#links{
+  float:left;
+  width:20%;
+  background-color: #F88;
+}
+body{
+  max-width: 1024px;
+  min-width: 600px;
+  margin: 0 auto;
+  background-image: url('graphics/starfiel.gif')
+}
+#title{
+  text-align: center;
+  font-family: Verdana,sans-serif;
+  color:#fff;
+}
