@@ -1,0 +1,55 @@
+#main{
+  min-width: 480px;
+  max-width: 1024px;
+  margin: auto;
+  min-height: 640px;
+  background-color:#446;
+  background-size: auto;
+  font-family: Verdana,sans-serif;
+  color:#ddd;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  position:relative;
+}
+#image{
+  background-image: url("graphics/kobe-beef.jpg");
+  height:540px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  width:100%;
+  text-align: justify;
+}
+#mainText{
+  position:static;
+  bottom:10px;
+}
+#top{
+  min-height: 100px;
+  min-width:480px;
+  max-width: 1024px;
+  margin: auto;
+}
+#logo{
+  height: 150px;
+}
+#mainLogo{
+  position:absolute;
+  top:20px;
+}
+#mainMenu{
+  position:absolute;
+  bottom:180px;
+  left:20px;
+}
+#mainAb{
+  position:absolute;
+  right:20px;
+}
+#mainLoc{
+  position:absolute;
+  top:200px;
+  right:50px;
+}
+body{
+  background-color: #333;
+}
