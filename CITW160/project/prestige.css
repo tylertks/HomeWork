@@ -55,10 +55,12 @@
 .topButton{
   font-weight: bold;
   min-width: 100px;
-  background-color: #888;
+  background-color: #777;
+  height:120px;
   font-family: Verdana,sans-serif;
   float:left;
   margin: auto;
+  line-height: 120px;
 }
 body{
   background-color: #333;
