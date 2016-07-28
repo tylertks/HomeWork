@@ -28,9 +28,11 @@
   min-width:480px;
   max-width: 1024px;
   margin: auto;
+  background-color: #888;
+  padding: 0 10 0 10;
 }
 #logo{
-  height: 150px;
+  height: 120px;
 }
 #mainLogo{
   position:absolute;
@@ -50,6 +52,21 @@
   top:200px;
   right:50px;
 }
+.topButton{
+  font-weight: bold;
+  min-width: 100px;
+  background-color: #888;
+  font-family: Verdana,sans-serif;
+  float:left;
+  margin: auto;
+}
 body{
   background-color: #333;
+}
+a{
+  color: #eee;
+}
+table{
+  text-align: center;
+  margin:auto;
 }
