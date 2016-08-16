@@ -1,0 +1,21 @@
+Company Name: Din Mormor Choklad
+What we're selling: Premium Gourmet Chocolate
+
+Website
+  Homepage
+    Title bar
+      Logo
+      links
+  Contact Page
+    Phone number
+    Address
+    Email
+    Social Media
+  About Page
+    Short paragraph about company
+    Products
+  Products Page
+    list of products
+  News
+    updates
+    twitter feed?
