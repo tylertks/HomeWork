@@ -27,7 +27,7 @@ body{
 #logoSm{
 }
 #content{
-  min-width: 960px;
+  min-width: 600px;
   max-width: 1600px;
   width: 80%;
   margin: auto;
