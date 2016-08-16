@@ -1,4 +1,5 @@
 Company Name: Din Mormor Choklad
+Slogan:
 What we're selling: Premium Gourmet Chocolate
 
 Website
@@ -6,6 +7,7 @@ Website
     Title bar
       Logo
       links
+    small blurb
   Contact Page
     Phone number
     Address
@@ -16,6 +18,10 @@ Website
     Products
   Products Page
     list of products
+      Truffles
+      Pure Chocolate bar
+      Fudge
+      Chocolate Covered Strawberries/Cherries
   News
     updates
     twitter feed?

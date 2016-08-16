@@ -1,0 +1,55 @@
+body{
+  background-color: #bbb;
+}
+#menu{
+  background-color: #33d;
+  width:100%;
+}
+#topBar{
+  margin: auto;
+}
+#topBar td{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  background-color: #55b;
+  text-align: center;
+}
+#logoSm{
+}
+#content{
+  min-width: 960px;
+  max-width: 1600px;
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  min-height: 480px;
+  background-color: #ddd;
+}
+#header{
+  background-color: #d44;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  top: -50px;
+  position:relative;
+}
+#header h2{
+  text-align: center;
+}
+#topTable{
+  border: 1px solid black;
+  width: 100%;
+}
+#topTable td{
+  border: 1px solid black;
+  width: 30%;
+}
+#main{
+  clear:left;
+  padding: 10px;
+}
+.menuHighlight{
+  background-color: #fff;
+  border: 1px solid #ddf;
+}
