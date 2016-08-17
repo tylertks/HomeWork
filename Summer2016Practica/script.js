@@ -5,4 +5,10 @@ $(document).ready(function(){
   .mouseout(function(){
     $(this).removeClass('menuHighlight')
   })
+  $('#products tr').mouseover(function(){
+    $(this).addClass('productsHighlight')
+  })
+  .mouseout(function(){
+    $(this).removeClass('productsHighlight')
+  })
 })
