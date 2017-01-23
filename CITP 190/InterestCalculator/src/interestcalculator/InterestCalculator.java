@@ -19,35 +19,17 @@ public class InterestCalculator {
      * @param args the command line arguments
      */    
     public static void main(String[] args) {
-        InputStreamReader r=new InputStreamReader(System.in);  
-        BufferedReader br=new BufferedReader(r);
-        // TODO code application logic here
+      Scanner scan = new Scanner(System.in);
         String welcomeMessage = "Welcome to the interest calculator\n";
         System.out.print(welcomeMessage);
-        System.out.print("Enter your principal amount: ");
-        String userInput = "";
-        try {
-            userInput = br.readLine();
-        } catch (IOException ex) {
-            Logger.getLogger(InterestCalculator.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        double amount = Double.parseDouble(userInput);
-        System.out.print("Enter the APR: ");
-        try {
-            userInput = br.readLine();
-        } catch (IOException ex) {
-            Logger.getLogger(InterestCalculator.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        double apr = Double.parseDouble(userInput);
-        System.out.print("Enter the term (in years): ");
-        try {
-            userInput = br.readLine();
-        } catch (IOException ex) {
-            Logger.getLogger(InterestCalculator.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        int term = Integer.parseInt(userInput);      
+        System.out.print("\nPlease enter the principle amount: ");
+        double amount = scan.nextDouble();
+        System.out.print("Please enter the APR: ");
+        double apr = scan.nextDouble();
+        System.out.print("Please enter the amount of time (in years): ");
+        int term = scan.nextInt();
         double accrued = amount * java.lang.Math.pow((1+apr/1200),12 * term);
-        System.out.print("The amount accrued is: "+accrued);
+        System.out.print("\nThe amount accrued is: "+accrued);
     }
     
 }
