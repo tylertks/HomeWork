@@ -33,6 +33,17 @@ public class RockPaperScissorsApp {
                    System.out.println("Invalid Input");
                }
            }
+            switch(userChoice){
+                case "R":
+                    System.out.println("You chose Rock");
+                    break;
+                case "P":
+                    System.out.println("You chose Paper");
+                    break;
+                case "S":
+                    System.out.println("You chose Scissors");
+                    break;
+            }
             //Generate Computer Choice. 0 is Rock, 1 is Paper, 2 is Scissors
             int cpuGenerate = rand.nextInt(3);
             switch(cpuGenerate){
@@ -79,6 +90,7 @@ public class RockPaperScissorsApp {
             while(againLoop == true){
                 System.out.print("Would you like to play again (y/n)?");
                 again = scan.next();
+                again = again.toLowerCase();
                 if(again.equals("y")){
                     againLoop = false;
                 }else if(again.equals("n")){
