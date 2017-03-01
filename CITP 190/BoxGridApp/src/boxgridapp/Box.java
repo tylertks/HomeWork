@@ -17,7 +17,7 @@ public class Box {
     int x = MIN_X;
     int y = MIN_Y;
     
-    public void Box(int xMax, int yMax)
+    public Box(int xMax, int yMax)
     {
         maxX = xMax;
         maxY = yMax;
@@ -28,5 +28,26 @@ public class Box {
     }
     public int getY(){
         return y;
+    }
+    public void push(Vector v)
+    {
+        switch(v.getDirection()){
+            case "U":
+                y-=v.getMagnitude();
+                if(y>maxY){y=maxY;}
+                break;
+            case "D":
+                y+=v.getMagnitude();
+                if(y<MIN_Y){y=MIN_Y;}
+                break;
+            case"L":
+                x-=v.getMagnitude();
+                if(x<MIN_X){x=MIN_X;}
+                break;
+            case"R":
+                x+=v.getMagnitude();
+                if(x>maxX){x=maxX;}
+                break;
+        }
     }
 }

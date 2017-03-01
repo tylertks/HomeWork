@@ -21,17 +21,41 @@ public class Grid {
     int verticalSize;
     int horizontalSize;
     Box box;
-    public void Grid(int vSize, int hSize)
+    
+    public Grid(int vSize, int hSize)
     {
         verticalSize = vSize;
         horizontalSize = hSize;
+         box = new Box(verticalSize,horizontalSize);
     }
     public Box getBox(){
         return box;
     }
-    public void Draw()
+    public void draw()
     {
-        
-    }
+        System.out.print(WALL_TOP_LEFT_CORNER);
+        for (int i = 0; i<horizontalSize;i++){
+            System.out.print(WALL_TOP_BOTTOM);
+        }        
+        System.out.print(WALL_TOP_RIGHT_CORNER);
+        System.out.println();
+        for (int i =0; i < verticalSize;i++){
+            System.out.print(WALL_LEFT_RIGHT);
+            for (int j = 0; j < horizontalSize; j++){
+                if(i==box.getY() && j== box.getX()){
+                    System.out.print(BOX_CHAR);
+                }else{
+                    System.out.print(EMPTY);
+                }
+            }
+            System.out.print(WALL_LEFT_RIGHT);
+            System.out.println();
+        }
+        System.out.print(WALL_BOTTOM_LEFT_CORNER);
+        for(int i =0; i < horizontalSize; i++){
+            System.out.print(WALL_TOP_BOTTOM);
+        }
+        System.out.print(WALL_BOTTOM_RIGHT_CORNER);
+        System.out.println();
     }
 }

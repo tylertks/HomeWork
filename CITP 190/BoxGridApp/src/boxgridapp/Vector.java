@@ -13,7 +13,7 @@ public class Vector {
     String direction;
     int magnitude;
     
-    public void Vector(String s, int i)
+    public Vector(String s, int i)
     {
         direction = s;
         magnitude = i;
