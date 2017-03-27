@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Tyler Sikkema
+CITP 190
+BoxGridApp
+Draw a grid with a box in it. User can move the box
  */
 package boxgridapp;
 import java.util.*;
