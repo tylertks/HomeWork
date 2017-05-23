@@ -1,0 +1,6 @@
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment1\Assignment1\bin\Debug\Assignment1.exe.config
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment1\Assignment1\bin\Debug\Assignment1.exe
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment1\Assignment1\bin\Debug\Assignment1.pdb
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment1\Assignment1\obj\Debug\Assignment1.csprojResolveAssemblyReference.cache
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment1\Assignment1\obj\Debug\Assignment1.exe
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment1\Assignment1\obj\Debug\Assignment1.pdb
