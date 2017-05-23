@@ -86,7 +86,8 @@ namespace Assignment_2
             }
             float feet = miles * 5280;
             float km = miles * 1.60934f;
-            Console.Write(miles.ToString("#.##") + " miles =\n" + feet.ToString("#,#.") + " feet.\n" +km.ToString("#.##")+" kilometers.\n");
+            Console.Write(string.Format("{0,10:0.##} miles is\n{1,10:#,#.} feet.\n{2,10:0.##} kilometers.\n",miles,feet,km));
+            //Console.Write(miles.ToString("10.##") + " miles =\n" + feet.ToString("N5.") + " feet.\n" +km.ToString("N5.##")+" kilometers.\n");
         }
         static void Average()
         {
