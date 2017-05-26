@@ -80,7 +80,6 @@ public class Module1Project {
      */
     static public Product newProduct(Scanner sc)
     {
-        sc.nextLine();
         Product p = new Product();
         System.out.println("Enter UPC");
         p.setUpc(sc.nextLine());
@@ -88,11 +87,28 @@ public class Module1Project {
         p.setShortDetails(sc.nextLine());
         System.out.println("Enter Long Details");
         p.setLongDetails(sc.nextLine());
-        System.out.println("Enter Price");
-        p.setPrice(sc.nextBigDecimal());
-        System.out.println("Enter Stock");
-        p.setStock(sc.nextInt());
-        
+        boolean priceLoop  = true;
+        while(priceLoop){
+            try{
+                System.out.println("Enter Price");
+                p.setPrice(sc.nextBigDecimal());
+                priceLoop = false;
+            }catch(Exception e){
+                System.out.println("Invalid Input. Try Again.");
+                sc.nextLine();
+            }
+        }
+        boolean stockLoop = true;
+        while(stockLoop){
+            try{
+                System.out.println("Enter Stock");
+                p.setStock(sc.nextInt());
+                stockLoop = false;
+            }catch(Exception e){
+                System.out.println("Invalid Input. Try Again.");
+                sc.nextLine();
+            }
+        }       
         return p;
     }
 }

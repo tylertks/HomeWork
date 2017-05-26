@@ -78,12 +78,28 @@ public class InventoryManager {
                 i.setShortDetails(sc.nextLine());
                 System.out.println("Input Long Details: ");
                 i.setLongDetails(sc.nextLine());
-                System.out.println("Input Price: ");
-                i.setPrice(sc.nextBigDecimal());
-                sc.nextLine();
-                System.out.println("Input Stock: ");
-                i.setStock(sc.nextInt());
-                sc.nextLine();
+                boolean priceLoop = true;
+                while(priceLoop){
+                    try{
+                        System.out.println("Input Price: ");
+                        i.setPrice(sc.nextBigDecimal());
+                        priceLoop = false;
+                    }catch(Exception e){
+                        System.out.println("Invalid Input. Try Again.");
+                    }
+                    sc.nextLine();
+                }
+                boolean stockLoop = true;
+                while(stockLoop){
+                    try{
+                        System.out.println("Input Stock: ");
+                        i.setStock(sc.nextInt());                    
+                        stockLoop = false;
+                    }catch(Exception e){
+                        System.out.println("Invalid Input. Try Again.");
+                    }
+                    sc.nextLine();
+                }
                 break outLoop;
             }
         }
