@@ -1,7 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Serializable object. Contains variables for upc, short details, long details, price, and stock.
+ * Overrides the toString method to output the information stored in these variables.
  */
 package module1project;
 

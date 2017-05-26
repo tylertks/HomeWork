@@ -7,14 +7,26 @@ package module1project;
 
 /**
  *
- * @author tyler
+ * @author Tyler Sikkema
+ * Module 1 Project maintains a list of products including their upc, description, price, and amount.
+ * Saving to a local file is done with the CollexctionFileStorageUtility class.
  */
 import java.util.*;
 
 public class Module1Project {
 
     /**
-     * @param args the command line arguments
+     * The main class creates a loop for the main menu.
+     * This menu creates options for:
+     *      showing the list of products
+     *      searching by upc
+     *      adding new products
+     *      updating an existing product by upc
+     *      removing products
+     *      exiting the program.
+     * Any input that it not a number will return an error and restart the loop. Any number other than 1-5 will exit the program.
+     * Adding a product will call the newProduct function.
+     * All other commands will ask for a UPC if appropriate, and call the corresponding function in the Inventory Manager class.
      */
     public static void main(String[] args) {
         System.out.println("Welcome to the Inventory Manager:");
@@ -22,16 +34,27 @@ public class Module1Project {
         Scanner sc = new Scanner(System.in);
         boolean mainLoop = true;
         InventoryManager inv = new InventoryManager();
+        int choice = 0;
         while(mainLoop){
-            System.out.print("1. Show Products\n2. Find Product by UPC\n3. Add Product\n4. Update Product\n5. Remove Product\n6. Exit\n");
-            int choice = sc.nextInt();
+            boolean menuLoop = true;
+            while(menuLoop){
+                System.out.print("1. Show Products\n2. Find Product by UPC\n3. Add Product\n4. Update Product\n5. Remove Product\n6. Exit\n");
+                try{
+                    choice = sc.nextInt();
+                    menuLoop = false;
+                }catch(Exception e){
+                    System.out.println("Invalid Input. Try Again.");
+                    sc.nextLine();
+                }
+            }            
+            sc.nextLine();
             switch(choice){
                 case 1:
                     System.out.print(inv.toString());
                     break;
                 case 2:
                     System.out.print("Enter UPC: ");
-                    inv.getProduct(sc.nextLine());
+                    System.out.println(inv.getProduct(sc.nextLine()).toString());
                     break;
                 case 3:
                     inv.addProduct(newProduct(sc));
@@ -51,6 +74,10 @@ public class Module1Project {
             }
         }
     }
+    /**
+     * This function is called from the main menu and asks the user for all necessary information for a new product.
+     * This includes: UPC, Short Details, Long Details, Price, and Stock.
+     */
     static public Product newProduct(Scanner sc)
     {
         sc.nextLine();

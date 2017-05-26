@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Manages an array of Products. Interfaces the CollectionFileStorageUtility to save and load information from a local file.
  */
 package module1project;
 
@@ -31,24 +29,22 @@ public class InventoryManager {
            return null;
        }
     }
+    /**
+     * when called. Attempts to load a list of products from a local file using CollectionFileStorageUtility.
+     * If this fails, returns an empty list.
+     */
     public List<Product> getProductList()
     {
-        /*try{
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("products.txt"));
-            return (List<Product>)ois.readObject();
-        }catch(Exception e)
-        {
-            System.out.println("Error: "+e.toString());
-            return null;
-        }*/
         try{
             return (List<Product>)inventory.load(Product.class);
         }catch(Exception e)
         {
-            //System.out.println("Error: "+e.toString());
             return productList;
         }         
     }
+    /**
+     * takes in a Product object and inserts the object into the ArrayList, then saves the ArrayList to a local file.
+     */
     public void addProduct(Product p)
     {
         productList = getProductList();
@@ -67,6 +63,11 @@ public class InventoryManager {
             System.out.println("Product already exists");
         }
     }
+    /**
+     * Takes in a Product Object, and searches for a matching object in the ArrayList.
+     * If a matching object is found, asks for user input to update the Product information.
+     * If no match is found, returns an error.
+     */
     public void updateProduct(Product p, Scanner sc){
         productList = getProductList();
         outLoop:
@@ -88,6 +89,10 @@ public class InventoryManager {
         }
         save(productList);
     }
+    /**
+     * Takes in a UPC and searches for a matching object to remove.
+     * If no object is found returns an error.
+     */
     public void removeProduct(String upc)
     {
         productList = getProductList();
@@ -100,6 +105,9 @@ public class InventoryManager {
         }
         save(productList);
     }
+    /**
+     * Utilizes CollectionFileStorageUtility to save to a local file.
+     */
     public void save(List<Product> list)
     {
         try
@@ -109,6 +117,9 @@ public class InventoryManager {
             System.out.println("Error: "+e.toString());
         }
     }
+    /**
+     * Overrides the toString method to print the list of Products
+     */
     @Override
     public String toString()
     {
