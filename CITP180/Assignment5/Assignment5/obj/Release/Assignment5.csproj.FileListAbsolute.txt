@@ -1,0 +1,5 @@
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment5\Assignment5\bin\Release\Assignment5.exe.config
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment5\Assignment5\bin\Release\Assignment5.exe
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment5\Assignment5\bin\Release\Assignment5.pdb
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment5\Assignment5\obj\Release\Assignment5.exe
+C:\Users\tyler\Documents\GitHub\HomeWork\CITP180\Assignment5\Assignment5\obj\Release\Assignment5.pdb
