@@ -24,10 +24,15 @@ public class InventoryServlet extends HttpServlet{
         response.setContentType("text/html");
         java.io.PrintWriter out = response.getWriter();
         out.println("<html><head><title>Inventory</title></head><body>");        
+        out.println("<table>");
+        out.println("<tr><th>UPC</th><th>Short Details</th><th>Long Details</th><th>Price</th><th>Stock</th></tr>");
         for(Product p: inv.getProductList())
         {
-            out.print("<br/>"+p.toString());
+            out.print("<tr>");
+            out.print("<td>"+p.getUpc()+"</td><td>"+p.getShortDetails()+"</td><td>"+p.getLongDetails()+"</td><td>$"+p.getPrice()+"</td><td>"+p.getStock()+"</td>");
+            //out.print("<br/>"+p.toString());
         }
+        out.println("</table>");
         //out.print(inv.toString());
         out.println("</body></html>");
         out.close();
@@ -41,6 +46,7 @@ public class InventoryServlet extends HttpServlet{
         p.setPrice(Float.parseFloat(request.getParameter("price")));
         p.setStock(Integer.parseInt(request.getParameter("stock")));
         inv.addProduct(p);
+        doGet(request, response);
     }
 
 }
