@@ -39,14 +39,19 @@ public class InventoryServlet extends HttpServlet{
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, java.io.IOException
     {
-        Product p = new Product();
+        System.out.println(request.getParameter("button"));
+        if("Create".equals(request.getParameter("button"))){
+            Product p = new Product();
         p.setUpc(request.getParameter("upc"));
         p.setShortDetails(request.getParameter("shortDetails"));
         p.setLongDetails(request.getParameter("longDetails"));
         p.setPrice(Float.parseFloat(request.getParameter("price")));
         p.setStock(Integer.parseInt(request.getParameter("stock")));
         inv.addProduct(p);
-        doGet(request, response);
+        }else if("Delete".equals(request.getParameter("button"))){
+            inv.removeProduct(request.getParameter("upc"));
+            System.out.println(request.getParameter("upc"));
+        }        
+        response.sendRedirect("/Module2Project/inventory.jsp");
     }
-
 }
