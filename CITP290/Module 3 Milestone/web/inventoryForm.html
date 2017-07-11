@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Inventory Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><h3>New Product</h3>
+            <form action="/store/inventory" method="post">
+                <p><label>UPC</label><input type="text" name ="upc" size="20"/>
+                    <label>Short Details</label><input type="text" name="shortDetails" size="20"/>
+                    <label>Long Details</label><input type="text" name="longDetails" size="20"/>
+                    <label>Price</label><input type="text" name="price" size="3"/>
+                    <label>Stock</label><input type="text" name="stock" size="3"/></p>
+                <p>
+                    <input type="submit" value="Submit"/>
+                    <input type="hidden" name="redirect" value="/store/inventory"/>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>
