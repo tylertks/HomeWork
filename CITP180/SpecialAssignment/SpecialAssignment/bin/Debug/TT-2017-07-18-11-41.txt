@@ -1,0 +1,6 @@
+Customer Name:	TT
+Phone:	0
+Pizza:Medium (Mushroom,Onion,Green Pepper,Pineapple,Olive) garlic Crust	$9.50
+Pizza:Small (Cheese) none Crust	$6.50
+Pizza:Large (Bacon,Ham) cajun Crust	$10.60
+Bread Sticks	$4.50

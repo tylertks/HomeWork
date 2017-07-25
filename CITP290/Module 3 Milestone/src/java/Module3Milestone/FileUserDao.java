@@ -80,8 +80,8 @@ public class FileUserDao implements DataAccessObject<User>{
     @Override
     public void delete(Object id){
         for(User p: userList){
-            if(p==id){
-                userList.remove(id);
+            if(p.toString().equals(id.toString())){
+                userList.remove(p);
             }
         }
     }

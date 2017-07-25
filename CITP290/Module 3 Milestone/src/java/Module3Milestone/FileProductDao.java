@@ -86,6 +86,7 @@ public class FileProductDao implements DataAccessObject<Product>{
                 productList.remove(id);
             }
         }
+        productList.remove(id);
     }
     public void save(List<Product> list)
     {

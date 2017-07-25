@@ -1,0 +1,8 @@
+Customer Name:	Tyler
+Phone:	0
+Pizza:Medium (Bacon,Ham,Pineapple,Chicken,Cheese)  Crust	$9.90
+Pizza:Small (Pepperoni,Bacon,Ham) none Crust	$6.90
+Pizza:Medium (Cheese) none Crust	$8.50
+Soda	$3.00
+Soda	$3.00
+Bread Sticks	$4.50

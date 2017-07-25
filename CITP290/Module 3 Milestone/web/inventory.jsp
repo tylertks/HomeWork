@@ -4,6 +4,8 @@
     Author     : tyler
 --%>
 
+<%@page import="Module3Milestone.FileProductDao"%>
+<%@page import="Module3Milestone.DataAccessObject"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="Module3Milestone.InventoryManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,9 +18,11 @@
     </head>
     <body>
         <% InventoryManager in = new InventoryManager();
-        pageContext.setAttribute("inventory", in.getProductList());
+        //pageContext.setAttribute("inventory", in.getProductList());
+        DataAccessObject productDao = new FileProductDao();
+        pageContext.setAttribute("inventory", productDao.readAll());
         %>
-        <table>
+        <table border="1">
         <tr><th>UPC</th><th>Short Details</th><th>Long Details</th><th>Price</th><th>Stock</th></tr>
         <c:out value="${test}" escapeXml="false"/>
         <c:forEach items="${inventory}" var="item">            
@@ -30,7 +34,7 @@
             <td>${item.getStock()}</td>            
                 <td><form action="/store/inventory" method="post">
                     <input type="submit" name="button" value="Delete"/>
-                    <input type="hidden" name="upc" value="${item.getUpc()}"/>
+                    <input type="hidden" name="upc" value="${item}"/>
                     </form>
                 </td>                
             </tr>

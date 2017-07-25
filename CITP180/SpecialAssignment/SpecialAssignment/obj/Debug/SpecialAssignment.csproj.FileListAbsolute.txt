@@ -1,0 +1,9 @@
+C:\Users\tyler\Documents\Visual Studio 2017\Projects\SpecialAssignment\SpecialAssignment\bin\Debug\SpecialAssignment.exe.config
+C:\Users\tyler\Documents\Visual Studio 2017\Projects\SpecialAssignment\SpecialAssignment\bin\Debug\SpecialAssignment.exe
+C:\Users\tyler\Documents\Visual Studio 2017\Projects\SpecialAssignment\SpecialAssignment\bin\Debug\SpecialAssignment.pdb
+C:\Users\tyler\Documents\Visual Studio 2017\Projects\SpecialAssignment\SpecialAssignment\obj\Debug\SpecialAssignment.csprojResolveAssemblyReference.cache
+C:\Users\tyler\Documents\Visual Studio 2017\Projects\SpecialAssignment\SpecialAssignment\obj\Debug\SpecialAssignment.Form1.resources
+C:\Users\tyler\Documents\Visual Studio 2017\Projects\SpecialAssignment\SpecialAssignment\obj\Debug\SpecialAssignment.Properties.Resources.resources
+C:\Users\tyler\Documents\Visual Studio 2017\Projects\SpecialAssignment\SpecialAssignment\obj\Debug\SpecialAssignment.csproj.GenerateResource.Cache
+C:\Users\tyler\Documents\Visual Studio 2017\Projects\SpecialAssignment\SpecialAssignment\obj\Debug\SpecialAssignment.exe
+C:\Users\tyler\Documents\Visual Studio 2017\Projects\SpecialAssignment\SpecialAssignment\obj\Debug\SpecialAssignment.pdb

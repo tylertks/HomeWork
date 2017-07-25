@@ -1,0 +1,4 @@
+Customer Name:	Tyler
+Phone:	300978
+Pizza:Medium (Pepperoni,Bacon,Ham,Cheese) garlic Crust	$9.40
+Total:$9.40
