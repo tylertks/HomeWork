@@ -26,19 +26,20 @@ public class FileUserDao implements DataAccessObject<User>{
     }
     @Override
     public User read(Object id){
-     try{
+        try{
+            String obj = String.class.cast(id);
             userList = readAll();
             for(User p: userList){
-                 if(p==id){
+                 if(p.getUsername().equals(obj)){
                     return(p);
-                 }                 
-             }
+                }                 
+            }
             System.out.println("User not found");
             return null;
-         }catch(Exception e){
-            System.out.println("Error: "+e.toString());
-            return null;
-         }
+        }catch(Exception e){
+           System.out.println("Error: "+e.toString());
+           return null;
+        }
     }
     @Override
     public void create(User user){
@@ -70,20 +71,25 @@ public class FileUserDao implements DataAccessObject<User>{
             }
         }
         if(!newUser){
-            delete(user);
+            delete(user.getUsername());
             userList.add(user);
             save(userList);
         }else{
-            System.out.println("Product not found");
+            System.out.println("User not found");
         }
     }
     @Override
     public void delete(Object id){
-        for(User p: userList){
-            if(p.toString().equals(id.toString())){
-                userList.remove(p);
+        String delUser = id.toString();
+        userList = readAll();
+        //System.out.println("User = "+read(id).getUsername());
+        for (int i = 0; i < userList.size(); i++) {
+            if(userList.get(i).getUsername().equals(delUser)){
+                userList.remove(i);
+                save(userList);
             }
         }
+        //userList.remove(read(id));
     }
     public void save(List<User> list)
     {

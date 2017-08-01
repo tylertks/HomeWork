@@ -34,7 +34,7 @@
             <td>${item.getStock()}</td>            
                 <td><form action="/store/inventory" method="post">
                     <input type="submit" name="button" value="Delete"/>
-                    <input type="hidden" name="upc" value="${item}"/>
+                    <input type="hidden" name="upc" value="${item.getUpc()}"/>
                     </form>
                 </td>                
             </tr>

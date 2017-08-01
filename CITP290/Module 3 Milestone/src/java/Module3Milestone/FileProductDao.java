@@ -8,6 +8,7 @@ package Module3Milestone;
 import edu.lcc.citp.utility.CollectionFileStorageUtility;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -28,19 +29,20 @@ public class FileProductDao implements DataAccessObject<Product>{
     }
     @Override
     public Product read(Object id){
-     try{
-           productList = readAll();
-           for(Product p: productList){
-               if(p==id){
-                   return(p);
-               }                 
-           }
-           System.out.println("Product not found");
-           return null;
-       }catch(Exception e){
+        try{
+            String obj = String.class.cast(id);
+            productList = readAll();
+            for(Product p: productList){
+                if(p.getUpc().equals(obj)){
+                    return(p);
+                }                 
+            }
+            System.out.println("Product not found");
+            return null;
+        }catch(Exception e){
            System.out.println("Error: "+e.toString());
            return null;
-       }
+        }
     }
     @Override
     public void create(Product product){
@@ -81,12 +83,15 @@ public class FileProductDao implements DataAccessObject<Product>{
     }
     @Override
     public void delete(Object id){
-        for(Product p: productList){
-            if(p==id){
-                productList.remove(id);
+        productList = readAll();
+        String delProd = id.toString();
+        for (int i = 0; i < productList.size(); i++) {
+            if(productList.get(i).getUpc().equals(delProd)){
+                productList.remove(i);
+                save(productList);
+                System.out.println("deleting "+delProd);
             }
         }
-        productList.remove(id);
     }
     public void save(List<Product> list)
     {

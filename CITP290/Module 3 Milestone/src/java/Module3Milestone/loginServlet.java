@@ -1,17 +1,13 @@
-package Module3Milestone;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Module3Milestone;
 
-import Module3Milestone.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,8 +20,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author tyler
  */
-@WebServlet(urlPatterns = {"/users"})
-public class UserServlet extends HttpServlet {
+@WebServlet(name = "loginServlet", urlPatterns = {"/login"})
+public class loginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +33,6 @@ public class UserServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     DataAccessObject<User> uDao = DataAccessObjectFactory.getUserDao();
-    public void init(HttpServletRequest request, HttpServletResponse response) throws ServletException, java.io.IOException{
-        DataAccessObject<User> uDao = DataAccessObjectFactory.getUserDao();
-        this.getServletContext().setAttribute("userDao", uDao);
-    }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -49,13 +41,12 @@ public class UserServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UserServlet</title>");            
+            out.println("<title>Servlet loginServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UserServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet loginServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            
         }
     }
 
@@ -71,20 +62,17 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        if(session.getAttribute("currentUser")!=null){
-            User u = DataAccessObjectFactory.getUserDao().read(session.getAttribute("currentUser"));
-            if(u.getRoles().contains(User.ADMINISTRATOR)){
-                response.sendRedirect("/store/users.jsp");
-            }
-            else{
-                response.sendRedirect("/store/login");
-            }
-        }else{
-            response.sendRedirect("/store/login");
-        }
-        //response.sendRedirect("/store/users.jsp");
         //processRequest(request, response);
+        DataAccessObject<User> uDao = DataAccessObjectFactory.getUserDao();
+        User newUser = new User();
+        newUser.setUsername("admin");
+        newUser.setPassword("password");
+        Set<String> roles = new HashSet<String>();
+        roles.add(User.ADMINISTRATOR);
+        roles.add(User.INVENTORY_MANAGER);
+        newUser.setRoles(roles);
+        uDao.create(newUser);
+        response.sendRedirect("/store/login.jsp");
     }
 
     /**
@@ -99,24 +87,28 @@ public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        System.out.println(request.getParameter("button"));
-        if("Create".equals(request.getParameter("button"))){
-            User u = new User();
-            Set<String> roles = new HashSet<String>();
-            if(request.getParameter("Administrator")!=null){
-                roles.add(User.ADMINISTRATOR);
+        String user = request.getParameter("username");
+        String password = request.getParameter("password");
+        HttpSession session = request.getSession();
+        User u;
+        try{
+            u = uDao.read(user);
+            if(uDao.read(user).getPassword().equals(password)){
+                session.setAttribute("currentUser",user);
+                response.sendRedirect("/store/");
             }
-            if(request.getParameter("InventoryManager")!=null){
-                roles.add(User.INVENTORY_MANAGER);
+            else{
+                response.sendRedirect("/store/login.jsp?failed=true");
             }
-            u.setRoles(roles);
-            u.setUsername(request.getParameter("username"));
-            u.setPassword(request.getParameter("password"));
-        uDao.create(u);
-        }else if("Delete".equals(request.getParameter("button"))){
-            uDao.delete(request.getParameter("username"));
+        }catch(Exception e){
+            if(request.getParameter("logout")=="true"){
+                session.setAttribute("currentUser", null);
+                response.sendRedirect("/store/login.jsp");
+            }
+            else{
+                response.sendRedirect("/store/login.jsp?failed=true");
+            }
         }        
-        response.sendRedirect("/store/users");
     }
 
     /**

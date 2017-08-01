@@ -41,7 +41,19 @@ public class InventoryServlet extends HttpServlet{
         //out.print(inv.toString());
         out.println("</body></html>");
         out.close();*/
-        response.sendRedirect("/store/inventory.jsp");
+        HttpSession session = request.getSession();
+        if(session.getAttribute("currentUser")!=null){
+            User u = DataAccessObjectFactory.getUserDao().read(session.getAttribute("currentUser"));
+            if(u.getRoles().contains(User.INVENTORY_MANAGER)){
+                response.sendRedirect("/store/inventory.jsp");
+            }
+            else{
+                response.sendRedirect("/store/login");
+            }
+        }else{
+            response.sendRedirect("/store/login");
+        }
+        
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, java.io.IOException
     {

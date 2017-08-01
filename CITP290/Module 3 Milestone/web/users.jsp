@@ -23,17 +23,16 @@
         List<User> uList = userDao.readAll();
         pageContext.setAttribute("ulist",uList);
         %>
-        ${ulist.get(0).getUsername()}
         <table border="1">
         <tr><th>Username</th><th>Password</th><th>Roles</th></tr>
         <c:forEach items="${ulist}" var="user">            
             <tr>
             <td>${user.getUsername()}</td>
-            <td>${user.getPassword()}</td>
+            <td>*****</td>
             <td>${user.getRoles()}</td>
                 <td><form action="/store/users" method="post">
                     <input type="submit" name="button" value="Delete"/>
-                    <input type="hidden" name="username" value="${item}"/>
+                    <input type="hidden" name="username" value="${user.getUsername()}"/>
                     </form>
                 </td>                
             </tr>
