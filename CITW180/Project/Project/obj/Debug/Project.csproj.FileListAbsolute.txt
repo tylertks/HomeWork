@@ -55,3 +55,4 @@ C:\Users\tyler\Documents\GitHub\HomeWork\CITW180\Project\Project\obj\Debug\Proje
 C:\Users\tyler\Documents\GitHub\HomeWork\CITW180\Project\Project\obj\Debug\Project.pdb
 C:\Users\tyler\Documents\GitHub\HomeWork\CITW180\Project\Project\bin\Microsoft.AspNet.FriendlyUrls.dll
 C:\Users\tyler\Documents\GitHub\HomeWork\CITW180\Project\Project\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Tyler\Documents\Github\HomeWork\CITW180\Project\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache

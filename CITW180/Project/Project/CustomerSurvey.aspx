@@ -31,7 +31,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Technician Support
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Display Customer incidents</a></li>
+                            <li><a href="CustomerIncidentDisplay">Display Customer incidents</a></li>
                             <li><a href="#">Update Incidents</a></li>
                         </ul>
                     </li>

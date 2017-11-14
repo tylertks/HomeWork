@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -110,6 +111,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CustomerDisplay.aspx" />
+    <Content Include="CustomerIncidentDisplay.aspx" />
     <Content Include="CustomerSurvey.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -148,6 +150,13 @@
     </Compile>
     <Compile Include="CustomerDisplay.aspx.designer.cs">
       <DependentUpon>CustomerDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerIncidentDisplay.aspx.cs">
+      <DependentUpon>CustomerIncidentDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerIncidentDisplay.aspx.designer.cs">
+      <DependentUpon>CustomerIncidentDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerSurvey.aspx.cs">
       <DependentUpon>CustomerSurvey.aspx</DependentUpon>
