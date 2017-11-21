@@ -112,6 +112,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CustomerDisplay.aspx" />
     <Content Include="CustomerIncidentDisplay.aspx" />
+    <Content Include="CustomerMaintenance.aspx" />
     <Content Include="CustomerSurvey.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -131,6 +132,7 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="SurveyComplete.aspx" />
+    <Content Include="TechnicianMaintenance.aspx" />
     <Content Include="test.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -159,6 +161,13 @@
     </Compile>
     <Compile Include="CustomerIncidentDisplay.aspx.designer.cs">
       <DependentUpon>CustomerIncidentDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMaintenance.aspx.cs">
+      <DependentUpon>CustomerMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerMaintenance.aspx.designer.cs">
+      <DependentUpon>CustomerMaintenance.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerSurvey.aspx.cs">
       <DependentUpon>CustomerSurvey.aspx</DependentUpon>
@@ -200,6 +209,13 @@
     </Compile>
     <Compile Include="SurveyComplete.aspx.designer.cs">
       <DependentUpon>SurveyComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TechnicianMaintenance.aspx.cs">
+      <DependentUpon>TechnicianMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TechnicianMaintenance.aspx.designer.cs">
+      <DependentUpon>TechnicianMaintenance.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
