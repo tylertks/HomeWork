@@ -126,12 +126,14 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="CustomerList.aspx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="IncidentDisplay.aspx" />
     <Content Include="ProductMaintenance.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="SurveyComplete.aspx" />
+    <Content Include="TechnicianIncidentSummary.aspx" />
     <Content Include="TechnicianMaintenance.aspx" />
     <Content Include="test.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -180,6 +182,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Incident.cs" />
+    <Compile Include="Models\IncidentDB.cs" />
+    <Compile Include="IncidentDisplay.aspx.cs">
+      <DependentUpon>IncidentDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IncidentDisplay.aspx.designer.cs">
+      <DependentUpon>IncidentDisplay.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductMaintenance.aspx.cs">
       <DependentUpon>ProductMaintenance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,6 +219,14 @@
     </Compile>
     <Compile Include="SurveyComplete.aspx.designer.cs">
       <DependentUpon>SurveyComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TechnicianDB.cs" />
+    <Compile Include="TechnicianIncidentSummary.aspx.cs">
+      <DependentUpon>TechnicianIncidentSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TechnicianIncidentSummary.aspx.designer.cs">
+      <DependentUpon>TechnicianIncidentSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="TechnicianMaintenance.aspx.cs">
       <DependentUpon>TechnicianMaintenance.aspx</DependentUpon>
@@ -240,7 +258,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
